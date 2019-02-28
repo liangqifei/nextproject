@@ -1,0 +1,32 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "preset-env": {},
+        "transform-runtime": {},
+        "styled-jsx": {},
+        "class-properties": {}
+      }
+    ]
+  ],
+  "plugins": [
+    ["import", { "libraryName": "antd-mobile", "style": "css" }],
+    [
+      "module-resolver", //处理路径，别名style
+      {
+        "root": ["."],
+        "alias": {
+          "styles": "./styles"
+        },
+        "cwd": "babelrc"
+      }
+    ],
+    [
+      "wrap-in-js", //react 行内css
+      {
+        "extensions": ["css$", "scss$"]
+      }
+    ]
+  ]
+}
